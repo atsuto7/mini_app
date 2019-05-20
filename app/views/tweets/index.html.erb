@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample</title>
+  <style type="text/css" href="./style.css"></style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">BLOG!!</a>
+  
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    
+    <div class="link">
+      <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+    </div>
+    <div class="link">
+     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </div>
+    <div class="link">
+     <%= link_to "サインイン", new_user_registration_path, class: 'post'%>
+    </div>
+    <% if user_signed_in? %>
+    <div class="link">
+      <a class="post" href="/tweets/new">投稿する</a>
+    </div>
+    <%end%>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+  <%= render @tweets %>
+  
+  
+</div>
+
+
+        
+<script type="text/javascript" src="./app.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</body>
+</html>
